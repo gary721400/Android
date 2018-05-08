@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AF6Receiver</string>
+    <string name="Count">0</string>
+    <string name="MessageInfo">0</string>
+    <string name="Index">0</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

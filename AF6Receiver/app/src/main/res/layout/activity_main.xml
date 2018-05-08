@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="afaya.player.MainActivity" >
+
+    <TextView
+        android:id="@+id/testMsgIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="50dp"       
+        android:text="@string/Index" />
+    <TextView
+        android:id="@+id/testMsgCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/testMsgIndex"
+        android:layout_margin="50dp"
+        android:text="@string/Count" />
+    <TextView
+        android:id="@+id/testMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/testMsgCount"
+        android:layout_margin="50dp"
+        android:text="@string/MessageInfo" />
+    
+   
+
+</RelativeLayout>
