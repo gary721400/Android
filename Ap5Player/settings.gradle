@@ -1,0 +1,22 @@
+def initSetting(){
+    println("begin initSetting")
+//    println("over initSetting")
+}
+
+def overSetting(){
+    println("over initSetting")
+//    println("over initSetting")
+}
+
+//initSetting()
+println "setting.gradle begin"
+println "In posdevice,gradle id is " + gradle.hashCode()
+println "Home Dir: " + gradle.gradleHomeDir
+println "User Home Dir: " + gradle.gradleUserHomeDir
+println "Parent: " + gradle.parent
+
+include ':app', ':mp3playerdemo'
+
+println "setting.gradle over"
+
+//overSetting()
