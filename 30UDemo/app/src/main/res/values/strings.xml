@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">30UDemo</string>
+    <string name="disconnected">DisConnected</string>
+    <string name="connected">Connected</string>
+</resources>

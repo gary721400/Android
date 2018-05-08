@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+def releaseTimer(){
+    return new Date().format("yyyy-MM-dd",TimeZone.getTimeZone("UTC"));
+}
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'android'
+            keyPassword '111111'
+            storeFile file('D:/Android/android.jks')
+            storePassword '111111'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.afaya.a30udemo"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+
+            android.applicationVariants.all{
+                variant -> variant.outputs.each{ output ->
+                    if(output.outputFile != null && output.outputFile.name.endsWith(".apk")){
+                        def fileName = "30UDemo-${defaultConfig.versionName}-${releaseTimer()}-${variant.flavorName}.apk"
+                        output.outputFile = new File(output.outputFile.parent,fileName)
+                    }
+                }
+            }
+
+        }
+    }
+    productFlavors {
+        dev {
+            applicationId 'com.afaya.dev'
+        }
+        baidu {
+            applicationId 'com.afaya.baidu'
+        }
+        google {
+            applicationId 'com.afaya.google'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    testCompile 'junit:junit:4.12'
+}
